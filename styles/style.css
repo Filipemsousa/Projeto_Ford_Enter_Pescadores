@@ -18,10 +18,12 @@ body {
 .slides img{
     display: block;
     max-width: 100%;
+    
 }
 
 .slides{
     display: flex;
+    transform: transform 0.5s ease-in-out;
 }
 
 button{
