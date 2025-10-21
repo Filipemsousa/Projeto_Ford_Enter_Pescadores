@@ -6,8 +6,41 @@
 body {
     background: #ffffff;
     height: 100%;
+    display: flex;   
 }
 
+.carrossel{
+    max-width: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slides img{
+    display: block;
+    max-width: 100%;
+}
+
+.slides{
+    display: flex;
+}
+
+button{
+    position: absolute;
+    top:50%
+    
+}
+
+button:hover{
+    background-color: #72dadd;
+}
+
+.esquerda{
+    left: 10px;
+}
+
+.direita{
+    right: 10px;
+}
 
 main{
     margin-top: 300px;
@@ -54,7 +87,7 @@ header nav {
 
 header nav a {
     color: #060607;
-    font-size: 35px;
+    font-size: 20px;
     text-decoration: none;
     font-weight: 900;
     margin-left: 14px;
@@ -78,7 +111,7 @@ footer {
     display: flex;
     align-items: center;
     background-color: #0b1535;
-    font-size: 22px;
+    font-size: 15px;
     position: fixed;
     left: 0;
     bottom: 0;
