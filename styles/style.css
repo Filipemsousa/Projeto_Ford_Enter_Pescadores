@@ -10,14 +10,20 @@ body {
 }
 
 .carrossel{
-    max-width: 400px;
+    /* max-width: 300px; */
+    width: 1000px;
     overflow: hidden;
     position: relative;
+    margin: auto;
+    max-height: 80%;
+
 }
 
 .slides img{
     display: block;
     max-width: 100%;
+    
+
     
 }
 
@@ -47,6 +53,7 @@ button:hover{
 main{
     margin-top: 300px;
     flex-grow: 1;
+    
 }
 
 html {
@@ -74,6 +81,7 @@ header {
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
     padding: 10px;
+    z-index: 1;
 }
 
 header div {
