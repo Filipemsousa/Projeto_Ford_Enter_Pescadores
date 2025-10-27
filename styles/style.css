@@ -125,6 +125,7 @@ nav li {
     justify-content: center;
     margin: 20px 0 20px 0;
     gap: 20px;
+    background-color: #5c7de0;
 
     
 }
@@ -134,6 +135,7 @@ nav li {
     width: 400px; /* Largura definida para a caixa */
     border: 1px solid #ccc;
     padding: 20px;
+    background-color: #FFFFFF;
     
 }
 
