@@ -17,15 +17,13 @@ body {
     overflow: hidden;
     position: relative;
     margin: auto;
-    
+    margin-top: -180px;
 
 }
 
 .slides img{
     display: block;
     max-width: 100%;
-    
-
     
 }
 
@@ -120,6 +118,16 @@ header nav a:hover {
 nav li {
     display: inline;
     list-style: none;
+}
+
+.sobre_nos{
+    display: flex;
+    align-items: center;
+    text-align: justify;
+}
+
+.sobre_nos_img{
+    width: 450px;
 }
 
 
