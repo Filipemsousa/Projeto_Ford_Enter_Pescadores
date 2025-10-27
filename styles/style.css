@@ -122,12 +122,24 @@ nav li {
 
 .sobre_nos{
     display: flex;
-    align-items: center;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+    gap: 20px;
+
+    
+}
+
+.sobre_nos_texto{
     text-align: justify;
+    width: 400px; /* Largura definida para a caixa */
+    border: 1px solid #ccc;
+    padding: 20px;
+    
 }
 
 .sobre_nos_img{
     width: 450px;
+    
 }
 
 
