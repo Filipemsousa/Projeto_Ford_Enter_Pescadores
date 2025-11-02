@@ -7,10 +7,11 @@
     <title>Colonia Z6 Itapuã</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/localidades.css">
+    <link rel="stylesheet" href="styles/contato.css">
 </head>
 
 <body>
-    <script src="carrossel.js" defer></script>
+    
     <header>
         <div>
             <img class="logo_principal" src="Imagens/logo_pesca7.png" alt="logo">
@@ -36,31 +37,38 @@
         </nav>
 
     </header>
+
     <main>
-        <div class="carrossel">
-            <div class="slides">
-                <img src="Imagens/carrossel1.jpeg" alt="pescadores">
-                <img src="Imagens/carrossel2.jpeg" alt="pescador barco">
-                <img src="Imagens/carrossel3.jpeg" alt="pescador preto e branco">
-            </div>
-            <button class="esquerda">&#10094;</button>
-            <button class="direita">&#10095;</button>
-
+    <div class="contato_indicador">
+        <h1 >Entre em Contato</h1>
+        <p>Estamos sempre prontos para conversar. Entre em contato conosco e faça parte da nossa comunidade.</p>
+    </div>
+    <div>
+    <img class="formulario_imagem" src="Imagens/logo_pesca.png" alt="pescador_contato">
+    </div>
+        <form class="formulario_itens" action="" method="post">
+            <h1 class="formulario_titulo">Envie uma mensagem</h1>
+            <label for="campoNome"></label>
+            <input class="formulario_texto" type="text" id="campoNome" placeholder="NOME*">
+            <label for="campoEmail"></label>
+            <input class="formulario_texto" type="email" id="campoEmail" placeholder="EMAIL*">
+            <label for="campoTelefone"></label>
+            <input class="formulario_texto" type="number" id="campoTelefone" placeholder="TELEFONE*">
+            <label for="campoSelecao"></label>
+                <select class="formulario_texto" name="" id="campoSelecao">
+                    <option value="0" selected disabled>Assunto</option>
+                    <option value="1">ELOGIO</option>
+                    <option value="2">RECLAMAÇÃO</option>
+                    <option value="3">SOLICITAÇÃO</option>
+                </select>
+            <label for="campoMensagem"></label>
+            <input class="formulario_texto" type="text" id="campoMensagem" placeholder="MENSAGEM*">
+        <h1 class="botao_enviar"><p class="botao_texto">Enviar Mensagem</p></h1>   
+        </form>
+        <div>
+            <h1>MAPA</h1>
         </div>
-
-
-        <div class="sobre_nos">
-            <div class="sobre_nos_texto">
-                <h1>Sobre nós</h1>
-                <p>As Colônias de Pescadores são os órgãos de classe responsáveis por representar os trabalhadores da
-                    pesca artesanal. Sua criação e organização social datam de 1818, no período do Reinado de D. João V.
-                    A data inicial mais antiga conhecida da atividade em Itapuã é de 1898.</p>
-            </div>
-            <div>
-                <img class="sobre_nos_img" src="Imagens/pescadores.jpeg" alt="pescador no barco">
-            </div>
-        </div>
-
+   
     </main>
 
     <footer>
