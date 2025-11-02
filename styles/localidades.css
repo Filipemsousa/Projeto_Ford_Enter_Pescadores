@@ -1,0 +1,28 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.local_todos{
+    margin-top: -180px;
+}
+
+.local{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+    gap: 20px;
+    background-color: #8590b1;
+    align-items: center;
+    flex-direction: column;
+}
+
+.local_texto{
+    text-align: justify;
+    width: 400px; /* Largura definida para a caixa */
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #FFFFFF;
+    margin-top: auto;
+    
+}
