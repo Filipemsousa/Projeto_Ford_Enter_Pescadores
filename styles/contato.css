@@ -37,41 +37,55 @@ main p{
     justify-content: center;
 }
 
+.formulario_geral{
+    display: flex;
+    gap: 80px;
+    padding: 20px;
+    align-items: center;
+}
+
 .formulario{
     display: flex;
     flex-direction: row;
     position: relative;
     top: -30px;
-    
 
 }
 
 .formulario_titulo{
     font-size: 25px;
-
-}
-
-.formulario_imagem{
-    width: 100px;
     display: flex;
+    align-items: center;
+    justify-content: center;    
 }
 
 .formulario_itens{
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    width: 350px;   
+    gap: 11px;
+    width: 350px;
+    border-radius: 10px;
+    background-color:#fffffff8;
+    box-shadow: 3px 3px 15px;
 }
 
 .formulario_texto{
-    font-size: 14px;
+    font-size: 17px;
     border-radius: 8px;
     padding: 3px;
 }
 
+.mapa{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px;  
+}
+
 .botao_enviar{
     color: white;
-    border: 0.5px solid rgb(49, 114, 236);
     background-color: rgb(21, 197, 209);
     border-radius: 10px;
     margin-top: 10px;
@@ -87,6 +101,6 @@ main p{
 
 .botao_enviar:hover{
     background-color: #2d59d4; /* Um tom de roxo mais escuro (índigo) */
-    transform: scale(1.05); /* Aumenta o tamanho do botão em 5% */
+    transform: scale(1.01); /* Aumenta o tamanho do botão em 5% */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
 }

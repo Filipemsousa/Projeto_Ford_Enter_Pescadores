@@ -101,7 +101,7 @@ header nav {
 
 header nav a {
     color: #060607;
-    font-size: 17px;
+    font-size: 19px;
     text-decoration: none;
     font-weight: 900;
     margin-left: 14px;
@@ -125,7 +125,8 @@ nav li {
     justify-content: center;
     margin: 20px 0 20px 0;
     gap: 20px;
-    background-color:rgb(21, 197, 209);
+    background-color:#fffffff8;
+    box-shadow: 3px 3px 15px;
 
     
 }
@@ -133,7 +134,6 @@ nav li {
 .sobre_nos_texto{
     text-align: justify;
     width: 400px; /* Largura definida para a caixa */
-    border: 1px solid #ccc;
     padding: 20px;
     background-color: #FFFFFF;
     
@@ -141,7 +141,8 @@ nav li {
 
 .sobre_nos_img{
     width: 450px;
-    
+    padding: 10px;
+    box-shadow: 5px 5px 15px;
 }
 
 
