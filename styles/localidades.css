@@ -14,10 +14,12 @@
     justify-content: center;
     margin: 20px 0 20px 0;
     gap: 20px;
-    background-color: #e9e9e9;
+    background-color: #ffffff;
     box-shadow: 5px 5px 15px;
     align-items: center;
     align-self: center;
+    padding: 8px;
+    border-radius: 20px;
 }
 
 .local_texto{
@@ -28,8 +30,8 @@
     border: 1px solid #ccc;
     padding: 20px;
     background-color: #FFFFFF;
-    
     box-shadow: 5px 5px 15px;
+    border-radius: 20px;
     
 }
 
@@ -37,4 +39,5 @@
     width: 450px;
     padding: 10px;
     box-shadow: 5px 5px 15px;
+    border-radius: 20px;
 }
