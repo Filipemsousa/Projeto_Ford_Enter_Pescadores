@@ -7,10 +7,12 @@
     <title>Colonia Z6 Itapuã</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/localidades.css">
+    <link rel="stylesheet" href="styles/contato.css">
+    <link rel="stylesheet" href="styles/login.css">
 </head>
 
 <body>
-    <script src="carrossel.js" defer></script>
+    
     <header>
         <div>
             <img class="logo_principal" src="Imagens/logo_pesca7.png" alt="logo">
@@ -36,31 +38,42 @@
         </nav>
 
     </header>
+
     <main>
-        <div class="carrossel">
-            <div class="slides">
-                <img src="Imagens/carrossel1.jpeg" alt="pescadores">
-                <img src="Imagens/carrossel2.jpeg" alt="pescador barco">
-                <img src="Imagens/carrossel3.jpeg" alt="pescador preto e branco">
+        <div class="forms">
+            <div class="logo_img">
+                <img class="logo" src="Imagens/logo_pesca.png">
             </div>
-            <button class="esquerda">&#10094;</button>
-            <button class="direita">&#10095;</button>
+            <div class="forms_div">
+                <div class="forms_div_texto">
+                    <h2 class="titulo">Boas Vindas</h2>
 
+                    <form onsubmit="Post(this); return false">
+                        <div>
+                            <label class="label-input" for=""> 
+                                <input type="text" name="email" placeholder="Insira seu e-mail*" class="form_id"
+                                    required>
+                            </label>
+                        </div>
+                        <div>
+                            <label class="label-input" for="">
+                                <input type="password" name="senha" placeholder="Insira sua senha*" class="form_id"
+                                required>
+                                
+                            </label>
+                        </div>
+                        <div class="txtLogin">
+                            <p>Logar automaticamente </p>
+                            <input type="checkbox">
+                        </div>
+                        <div>
+                        <button class="botao_entrar" type="submit" id="btnEntra">Entrar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-
-
-        <div class="sobre_nos">
-            <div class="sobre_nos_texto">
-                <h1>Sobre nós</h1>
-                <p>As Colônias de Pescadores são os órgãos de classe responsáveis por representar os trabalhadores da
-                    pesca artesanal. Sua criação e organização social datam de 1818, no período do Reinado de D. João V.
-                    A data inicial mais antiga conhecida da atividade em Itapuã é de 1898.</p>
-            </div>
-            <div>
-                <img class="sobre_nos_img" src="Imagens/pescadores.jpeg" alt="pescador no barco">
-            </div>
-        </div>
-
+   
     </main>
 
     <footer>
