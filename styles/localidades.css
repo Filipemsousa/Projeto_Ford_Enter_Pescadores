@@ -3,6 +3,18 @@
     margin: 0;
 }
 
+.local_titulo{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2vh;
+    background-color:  rgb(21, 197, 209);
+    font-size: 6vh;
+    padding: 100px;
+    width: 100%;
+}
+
 .local_todos{
     margin-top: -180px;
     display: flex;

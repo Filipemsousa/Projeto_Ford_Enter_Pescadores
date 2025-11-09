@@ -7,10 +7,11 @@
     <title>Colonia Z6 Itapuã</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/localidades.css">
+    <link rel="stylesheet" href="styles/publicacoes.css">
 </head>
 
 <body>
-    <script src="carrossel.js" defer></script>
+    <script src="publicacoes.js" defer></script>
     <header>
         <div>
             <img class="logo_principal" src="Imagens/logo_pesca7.png" alt="logo">
@@ -34,32 +35,32 @@
                 </li>
             </ul>
         </nav>
-
+    
     </header>
     <main>
-        <div class="carrossel">
-            <div class="slides">
-                <img src="Imagens/carrossel1.jpeg" alt="pescadores">
-                <img src="Imagens/carrossel2.jpeg" alt="pescador barco">
-                <img src="Imagens/carrossel3.jpeg" alt="pescador preto e branco">
-            </div>
-            <button class="esquerda">&#10094;</button>
-            <button class="direita">&#10095;</button>
+        <h1 class="feed_titulo">Feed de Publicações</h1>
+        
+         <!-- Botão de adicionar publicação -->
+    <div class="add-post-btn" id="add-post-btn">+</div>
 
-        </div>
+    <!-- Editor (oculto por padrão) -->
+    <div class="editor-container" id="editor-container">
+        <button class="close-editor" id="close-editor">✖</button>
+        <h2>Crie sua publicação</h2>
+        <input type="text" id="editor-title" placeholder="Digite o título da postagem...">
+        <textarea id="editor-text" placeholder="Digite o texto da postagem..."></textarea>
 
+        <h3>Adicione imagens</h3>
+        <input type="file" id="image-input" accept="image/*" multiple>
+        
+        <div class="save-indicator" id="save-indicator">Alterações salvas!</div>
 
-        <div class="sobre_nos">
-            <div class="sobre_nos_texto">
-                <h1>Sobre nós</h1>
-                <p>As Colônias de Pescadores são os órgãos de classe responsáveis por representar os trabalhadores da
-                    pesca artesanal. Sua criação e organização social datam de 1818, no período do Reinado de D. João V.
-                    A data inicial mais antiga conhecida da atividade em Itapuã é de 1898.</p>
-            </div>
-            <div>
-                <img class="sobre_nos_img" src="Imagens/pescadores.jpeg" alt="pescador no barco">
-            </div>
-        </div>
+        <button class="publish-btn" id="publish-btn">Publicar</button>
+    </div>
+
+    <!-- Feed -->
+    <div class="feed-container" id="feed-container"></div>
+
 
     </main>
 
