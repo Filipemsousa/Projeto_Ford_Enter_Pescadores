@@ -42,6 +42,7 @@ main p{
     gap: 80px;
     padding: 20px;
     align-items: center;
+    
 }
 
 .formulario{
@@ -49,14 +50,14 @@ main p{
     flex-direction: row;
     position: relative;
     top: -30px;
-
 }
 
 .formulario_titulo{
     font-size: 25px;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
+    color: white;    
 }
 
 .formulario_itens{
@@ -65,15 +66,23 @@ main p{
     gap: 11px;
     width: 350px;
     border-radius: 10px;
-    background-color:#fffffff8;
+    
     box-shadow: 5px 5px 15px;
     border-radius: 20px;
+    
 }
 
 .formulario_texto{
     font-size: 17px;
     border-radius: 8px;
     padding: 3px;
+}
+
+
+
+#campoMensagem{
+    height: 70px;
+    
 }
 
 .mapa{
@@ -84,6 +93,10 @@ main p{
     box-shadow: 5px 5px 15px;
     border-radius: 20px;
     
+}
+
+.mapa_titulo{
+    color: white;
 }
 
 .botao_enviar{

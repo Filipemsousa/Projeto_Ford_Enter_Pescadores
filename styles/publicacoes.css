@@ -17,11 +17,13 @@ body {
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: -20vh;
+            text-align: justify;
+            margin-top: -25vh;
             background-color:  rgb(21, 197, 209);
-            font-size: 6vh;
-            padding: 100px;
-            width: 100%;
+            font-size: 8vh;
+            padding: 15vh;
+            width: 185vh;
+            
         }
         /* Ícone de + flutuante */
         .add-post-btn {
@@ -49,7 +51,7 @@ body {
 
         /* Editor */
         .editor-container {
-            max-width: 800px;
+            max-width: 105vh;
             margin: 40px auto;
             padding: 20px;
             background-color: white;

@@ -13,6 +13,44 @@ body {
     
 }
 
+.index_titulo{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 12vh;
+    background-color:  rgb(21, 197, 209);
+    background-image: url(/Imagens/carrossel1.jpeg);
+    font-size: 5vh;
+    padding: 15vh;
+    width: 185vh;
+    text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+     0    2px 0 #000,
+     0   -2px 0 #000,
+     2px  0   0 #000,
+    -2px  0   0 #000;
+}
+
+.botao_logout{
+    display: flex;
+    position: absolute;
+    width: 33px;
+    margin-top: -3vh;
+    padding: 15px;
+    
+}
+
+.logout a{
+     width: 30px;
+    
+}
+
+
 .carrossel{
     /* max-width: 300px; */
     width: 1000px;
@@ -127,7 +165,7 @@ nav li {
     justify-content: center;
     margin: 20px 0 20px 0;
     gap: 20px;
-    background-color:#fffffff8;
+    background-color:#ffffffff;
     box-shadow: 3px 3px 15px;
 
     
@@ -156,10 +194,9 @@ footer {
     background-color: #0b1535;
     font-size: 15px;
     justify-content: end;
-    
     left: 0;
     bottom: 0;
-    width: 100%;      
+    width: 213vh;     
 }
 
 footer div {
