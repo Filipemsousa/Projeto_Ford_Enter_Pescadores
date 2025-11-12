@@ -23,6 +23,25 @@ main p{
     padding: 5px;
 }
 
+
+.botao_logout{
+    display: flex;
+    position: relative;
+    width: 54px;
+    margin-top: 2px;
+    padding: 10px;
+    left: 40px;
+    
+}
+
+.logout a{
+     width: 3px;
+    
+}
+
+
+
+
 .contato_indicador{
     margin-top: -180px;
     color: aliceblue;
