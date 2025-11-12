@@ -109,3 +109,5 @@ let tempImages = [];
             document.getElementById("image-input").addEventListener('change', handleImageUpload);
             document.getElementById("publish-btn").addEventListener('click', publishPost);
         };
+
+        
