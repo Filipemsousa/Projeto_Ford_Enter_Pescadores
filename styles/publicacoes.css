@@ -18,7 +18,7 @@ body {
             align-items: center;
             justify-content: center;
             text-align: justify;
-            margin-top: -18vh;
+            margin-top: -23vh;
             background-color:  rgb(21, 197, 209);
             font-size: 8vh;
             padding: 15vh;
@@ -42,6 +42,7 @@ body {
             cursor: pointer;
             box-shadow: 0 4px 8px rgba(0,0,0,0.3);
             transition: background-color 0.3s, transform 0.3s;
+            z-index: 1;
         }
 
         .add-post-btn:hover {
@@ -175,8 +176,34 @@ body {
             margin: 10px auto;
         }
 
+/* Botão de exclusão (X vermelho) */
+       .feed-item {
+        position: relative; /* 🔹 ESSENCIAL para o X aparecer dentro da publicação */
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        margin-bottom: 20px;
+    }
 
+    .delete-btn {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background-color: transparent;
+        color: red;
+        border: none;
+        font-size: 24px;
+        font-weight: bold;
+        cursor: pointer;
+        
+        transition: transform 0.2s, color 0.2s;
+    }
 
+    .delete-btn:hover {
+        color: darkred;
+        transform: scale(1.3);
+    }
 
 
 
