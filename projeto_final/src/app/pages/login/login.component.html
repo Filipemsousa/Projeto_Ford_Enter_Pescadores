@@ -1,1 +1,34 @@
-<p>login works!</p>
+<app-header></app-header>
+
+<div class="forms">
+    <div class="logo_img">
+        <img class="logo" src="Imagens/logo_pesca.png">
+    </div>
+    <div class="forms_div">
+        <div class="forms_div_texto">
+            <h2 class="titulo">Boas Vindas</h2>
+
+            <form onsubmit="Post(this); return false">
+                <div>
+                    <label class="label-input" for=""> 
+                        <input type="text" name="email" placeholder="Insira seu e-mail*" class="form_id"
+                            required>
+                    </label>
+                </div>
+                <div>
+                    <label class="label-input" for="">
+                        <input type="password" name="senha" placeholder="Insira sua senha*" class="form_id"
+                        required>
+                        
+                    </label>
+                </div>
+                
+                <div>
+                <button class="botao_entrar" type="submit" id="btnEntra">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<app-footer></app-footer>
