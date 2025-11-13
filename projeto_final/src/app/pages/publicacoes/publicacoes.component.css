@@ -1,0 +1,195 @@
+
+.feed_titulo{
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+    margin-top: 9vh;
+    background-color:  rgb(21, 197, 209);
+    font-size: 8vh;
+    padding: 15vh;
+   
+    
+}
+/* Ícone de + flutuante */
+.add-post-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #3dbcd3;
+    color: white;
+    font-size: 36px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1;
+}
+
+.add-post-btn:hover {
+    background-color: #2f8fbb;
+    transform: scale(1.05);
+}
+
+/* Editor */
+.editor-container {
+    max-width: 105vh;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+input[type="text"] {
+    width: 95vh;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+textarea {
+    width: 95vh;
+    height: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    resize: vertical;
+}
+
+input[type="file"] {
+    margin-top: 10px;
+    padding: 5px;
+}
+
+.save-indicator {
+    color: #4c7aaf;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 10px;
+    display: none;
+}
+
+.publish-btn {
+    background-color: #1198d6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-top: 10px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 16vh;
+}
+
+.publish-btn:hover {
+    background-color: #4565a0;
+}
+
+/* Botão de fechar editor */
+.close-editor {
+    float: right;
+    background: none;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    color: #777;
+    display: flex;
+    position: relative;
+    margin-left: 12vh;
+}
+
+.close-editor:hover {
+    color: #333;
+}
+
+/* Feed */
+.feed-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+}
+
+.feed-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.feed-item h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.feed-item p {
+    font-size: 20px;
+    color: #555;
+    margin-top: 10px;
+    text-align: justify;
+}
+
+.feed-item img {
+    width: 100%;
+    max-width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Botão de exclusão (X vermelho) */
+.feed-item {
+position: relative; /* 🔹 ESSENCIAL para o X aparecer dentro da publicação */
+background-color: white;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 15px;
+margin-bottom: 20px;
+}
+
+.delete-btn {
+position: absolute;
+top: 8px;
+right: 8px;
+background-color: transparent;
+color: red;
+border: none;
+font-size: 24px;
+font-weight: bold;
+cursor: pointer;
+
+transition: transform 0.2s, color 0.2s;
+}
+
+.delete-btn:hover {
+color: darkred;
+transform: scale(1.3);
+}
+
+
