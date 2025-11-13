@@ -101,6 +101,9 @@ html {
 }
 
 
+
+
+
 header ul {
     text-align: center;
     margin-left: auto;
@@ -160,6 +163,14 @@ nav li {
     list-style: none;
 }
 
+
+
+
+
+
+
+
+
 .sobre_nos{
     display: flex;
     justify-content: center;
@@ -185,6 +196,9 @@ nav li {
     box-shadow: 5px 5px 15px;
     border-radius: 20px;
 }
+
+
+/*footer----------------------------------------*/
 
 
 footer {
