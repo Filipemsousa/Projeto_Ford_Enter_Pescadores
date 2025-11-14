@@ -51,7 +51,8 @@ main{
 }
 
 .form_id {
-    display: block;
+    display: flex;
+    align-items: center;
     width: 56vh;
     border: 1px solid #cccccc;
     border-radius: 7px;
@@ -79,11 +80,13 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-    left: 3.5vh;
+    position: relative;   
     
-    
-    
+}
+
+.botao_entrar_div{
+    display: flex;
+    justify-content: center;
 }
 .botao_entrar:hover{
     background-color: #3487d4; 

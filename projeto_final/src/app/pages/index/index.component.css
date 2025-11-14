@@ -6,7 +6,11 @@
     flex-direction: column;
     margin-top: 9vh;
     background-color:  rgb(21, 197, 209);
-    background-image: url(/Imagens/carrossel1.jpeg);
+    background-image: url(/Imagens/barcos-itapua.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 25px;
     font-size: 5vh;
     padding: 15vh;
     
