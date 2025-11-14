@@ -11,7 +11,8 @@ main{
 .logo{
    display: flex;
    align-self: auto;
-   width: 50%;     
+   width: 50%;
+   margin-top: 35vh;     
 }
 
 .logo_div{
@@ -24,10 +25,13 @@ main{
 }
 
 .forms_div{
-    width: 60vh;
     background-color: #f7f7f7;
     border-radius: 10px;
     box-shadow: 1px 1px 10px;
+    height: 40vh;
+    display: flex;
+    margin-top: 30vh;
+    
      
 }
 .forms_div_texto{
@@ -42,6 +46,7 @@ main{
 .titulo{
     color: #32b9be;
     display: flex;
+    font-size: 3vh;
     
 }
 
@@ -53,7 +58,7 @@ main{
     height: 5vh;
     margin: 1vh;
     font-size: 2vh;
-    padding: 2vh;
+    padding: 1vh;
     padding-left: 20px;    
     
 }
@@ -61,12 +66,12 @@ main{
 .txtLogin{
     display: flex;
     justify-content: end;
-
+    
 }
 
 
 .botao_entrar{
-    width: 58vh;
+    width: 55vh;
     height: 5vh;
     border: 1px solid #9b9696;
     border-radius: 5px;
@@ -75,6 +80,7 @@ main{
     align-items: center;
     justify-content: center;
     position: relative;
+    left: 3.5vh;
     
     
     
