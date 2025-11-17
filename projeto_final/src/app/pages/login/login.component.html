@@ -3,31 +3,39 @@
     <div class="logo_img">
         <img class="logo" src="Imagens/logo_pesca.png">
     </div>
+
     <div class="forms_div">
         <div class="forms_div_texto">
             <h2 class="titulo">Boas Vindas</h2>
 
-            <form onsubmit="Post(this); return false">
+            <!-- Angular controlando o envio -->
+            <form (ngSubmit)="login()">
+
                 <div>
-                    <label class="label-input" for=""> 
-                        <input type="text" name="email" placeholder="Insira seu e-mail*" class="form_id"
-                            required>
+                    <label class="label-input">
+                        <input type="text" [(ngModel)]="username" name="username"
+                            placeholder="Insira seu e-mail*" class="form_id" required>
                     </label>
                 </div>
+
                 <div>
-                    <label class="label-input" for="">
-                        <input type="password" name="senha" placeholder="Insira sua senha*" class="form_id"
-                        required>
-                        
+                    <label class="label-input">
+                        <input type="password" [(ngModel)]="password" name="password"
+                            placeholder="Insira sua senha*" class="form_id" required>
                     </label>
                 </div>
-                
+
                 <div class="botao_entrar_div">
-                <button class="botao_entrar" type="submit" id="btnEntra">Entrar</button>
+                    <button class="botao_entrar" type="submit" id="btnEntra">Entrar</button>
+
+                    
+                    
                 </div>
+                    <div>
+                    <p class="msg">{{ message }}</p>
+                    </div>
             </form>
         </div>
     </div>
 </div>
 </main>
-
