@@ -36,6 +36,14 @@ header {
     width: 30px;
 }
 
+/* Hamburger menu - oculto por padrão */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 header nav ul {
     list-style: none;
     display: flex;
@@ -55,4 +63,113 @@ header nav ul a {
 
 header nav ul a:hover{
     border-bottom: 2px solid rgb(21, 197, 209);
+}
+
+/* Media Queries Responsividade Header */
+
+/* Mobile - até 767px (celulares) */
+@media (max-width: 767px) {
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 4px;
+        z-index: 1001;
+    }
+
+    .hamburger-menu .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #000;
+        transition: 0.3s;
+    }
+
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    header nav ul {
+        flex-direction: column;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 30px;
+        padding-top: 50px;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1000;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    header nav.active ul {
+        transform: translateX(0);
+    }
+
+    .logout {
+        display: none;
+    }
+
+    header {
+        padding: 5px 10px;
+        position: static;
+    }
+
+    .welcome-msg {
+        display: none;
+    }
+}
+
+/* Tablet - 768px a 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    header {
+        padding: 10px 50px;
+    }
+    
+    header nav ul a {
+        font-size: 1.1rem;
+    }
+    
+    .welcome-msg {
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop - 1366px e superiores */
+@media (min-width: 1366px) {
+    header {
+        padding: 15px 150px;
+    }
+    
+    header nav ul {
+        gap: 40px;
+    }
+    
+    header nav ul a {
+        font-size: 1.3rem;
+    }
+}
+
+/* Desktop ultra-wide - 1440px e superiores */
+@media (min-width: 1440px) {
+    header {
+        padding: 20px 200px;
+    }
+    
+    header nav ul {
+        gap: 50px;
+    }
 }

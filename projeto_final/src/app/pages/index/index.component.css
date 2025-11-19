@@ -54,3 +54,102 @@
     box-shadow: 5px 5px 15px;
     border-radius: 20px;
 }
+
+/* Media Queries Responsividade Index */
+
+/* Mobile - até 767px (celulares) */
+@media (max-width: 767px) {
+    .index_titulo {
+        margin-top: 5vh;
+        padding: 15vh 5vh;
+        font-size: 4vh;
+        text-align: center;
+    }
+    
+    .sobre_nos {
+        flex-direction: column;
+        gap: 10px;
+        margin: 10px 0;
+    }
+    
+    .sobre_nos_texto {
+        width: 90%;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .sobre_nos_img {
+        width: 100%;
+        padding: 5px;
+        height: auto;
+    }
+}
+
+/* Tablet - 768px a 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .index_titulo {
+        font-size: 4.5vh;
+        padding: 18vh 10vh;
+    }
+    
+    .sobre_nos {
+        margin: 25px 0;
+        gap: 15px;
+    }
+    
+    .sobre_nos_texto {
+        width: 45%;
+        font-size: 0.95rem;
+    }
+    
+    .sobre_nos_img {
+        width: 50%;
+    }
+}
+
+/* Desktop - 1366px e superiores */
+@media (min-width: 1366px) {
+    .index_titulo {
+        font-size: 6vh;
+        padding: 25vh;
+    }
+    
+    .sobre_nos {
+        gap: 25px;
+    }
+    
+    .sobre_nos_texto {
+        width: 500px;
+        font-size: 1.1rem;
+        padding: 25px;
+    }
+    
+    .sobre_nos_img {
+        width: 500px;
+        padding: 15px;
+    }
+}
+
+/* Desktop ultra-wide - 1440px e superiores */
+@media (min-width: 1440px) {
+    .index_titulo {
+        font-size: 6.5vh;
+        padding: 28vh;
+    }
+    
+    .sobre_nos {
+        gap: 30px;
+        margin: 25px 0;
+    }
+    
+    .sobre_nos_texto {
+        width: 550px;
+        font-size: 1.15rem;
+        padding: 30px;
+    }
+    
+    .sobre_nos_img {
+        width: 550px;
+        padding: 20px;
+    }
+}

@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 export class HeaderComponent implements OnInit, OnDestroy {
   isLoggedIn: boolean = false;
   user: string = '';
+  isMenuOpen: boolean = false;
   private subscription: Subscription = new Subscription();
 
   constructor(private auth: AuthService, private cdr: ChangeDetectorRef) { }
@@ -37,5 +38,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   logout() {
     this.auth.logout();
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

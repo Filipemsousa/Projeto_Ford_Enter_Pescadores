@@ -5,7 +5,15 @@
 <div>
     <img class="logo_principal" src="/Imagens/logo_pesca7.png" alt="logo">
 </div>
-<nav>
+
+<!-- Botão do menu hamburger -->
+<div class="hamburger-menu" (click)="toggleMenu()" [class.active]="isMenuOpen">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+</div>
+
+<nav [class.active]="isMenuOpen">
     <ul>
         <li>
             <a href="index">Inicio</a>

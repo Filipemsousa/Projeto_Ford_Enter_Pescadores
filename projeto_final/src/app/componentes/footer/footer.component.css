@@ -36,3 +36,74 @@ footer div {
      text-decoration: none;
      
 }
+/* Media Queries Responsividade Footer */
+
+/* Mobile - até 767px (celulares) */
+@media (max-width: 767px) {
+    footer {
+        padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    footer div {
+        float: none;
+        margin-right: 0;
+        order: 0;
+    }
+    
+    footer.social_links {
+        margin-top: 20px;
+        gap: 1rem;
+    }
+    
+    .logo_rodape {
+        margin-bottom: 15px;
+    }
+}
+
+/* Tablet - 768px a 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    footer {
+        padding: 15px;
+        justify-content: space-between;
+    }
+    
+    footer div {
+        margin-right: 30px;
+    }
+    
+    .social_links {
+        gap: 1.4rem;
+    }
+}
+
+/* Desktop - 1366px e superiores */
+@media (min-width: 1366px) {
+    footer {
+        padding: 25px;
+        font-size: 17px;
+    }
+    
+    footer div {
+        margin-right: 60px;
+    }
+    
+    .social_links {
+        gap: 1.5rem;
+    }
+}
+
+/* Desktop ultra-wide - 1440px e superiores */
+@media (min-width: 1440px) {
+    footer {
+        padding: 30px;
+        font-size: 18px;
+    }
+    
+    footer div {
+        margin-right: 80px;
+    }
+}

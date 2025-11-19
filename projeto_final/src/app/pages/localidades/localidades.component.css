@@ -70,3 +70,75 @@
     box-shadow: 5px 5px 15px;
     border-radius: 20px;
 }
+
+/* Media Queries para diferentes resoluções - diminuindo width de .local_img */
+
+/* Dispositivos móveis (celulares) - até 414px */
+@media (max-width: 414px) {
+    .local_img {
+        width: 250px;
+    }
+}
+
+/* Dispositivos móveis maiores - até 390px */
+@media (max-width: 390px) {
+    .local_img {
+        width: 220px;
+    }
+}
+
+/* Dispositivos móveis médios - até 375px */
+@media (max-width: 375px) {
+    .local_img {
+        width: 200px;
+    }
+}
+
+/* Dispositivos móveis pequenos - até 360px */
+@media (max-width: 360px) {
+    .local_img {
+        width: 180px;
+    }
+}
+
+/* Tablets em paisagem - até 600px */
+@media (max-width: 600px) {
+    .local_img {
+        width: 300px;
+    }
+}
+
+/* Tablets padrão - até 768px */
+@media (max-width: 768px) {
+    .local_img {
+        width: 350px;
+    }
+}
+
+/* Tablets maiores - até 810px */
+@media (max-width: 810px) {
+    .local_img {
+        width: 380px;
+    }
+}
+
+/* Desktops pequenos - até 1024px */
+@media (max-width: 1024px) {
+    .local_img {
+        width: 400px;
+    }
+}
+
+/* Desktops médios - até 1366px */
+@media (max-width: 1366px) {
+    .local_img {
+        width: 420px;
+    }
+}
+
+/* Desktops grandes - 1440px e acima (mantém o original) */
+@media (min-width: 1440px) {
+    .local_img {
+        width: 450px;
+    }
+}

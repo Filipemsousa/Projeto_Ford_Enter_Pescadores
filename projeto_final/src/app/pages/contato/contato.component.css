@@ -139,3 +139,29 @@ main p{
     transform: scale(1.01); /* Aumenta o tamanho do botÃ£o em 5% */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
 }
+
+/* Media Queries Responsividade Contato */
+
+/* Mobile - até 767px (celulares) */
+@media (max-width: 767px) {
+    /* AJUSTE CONFORME O CSS ATUAL DO CONTATO */
+    /* Adicionar aqui regras específicas para mobile */
+}
+
+/* Tablet - 768px a 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* AJUSTE CONFORME O CSS ATUAL DO CONTATO */
+    /* Adicionar aqui regras específicas para tablet */
+}
+
+/* Desktop - 1366px e superiores */
+@media (min-width: 1366px) {
+    /* AJUSTE CONFORME O CSS ATUAL DO CONTATO */
+    /* Adicionar aqui regras específicas para desktop grande */
+}
+
+/* Desktop ultra-wide - 1440px e superiores */
+@media (min-width: 1440px) {
+    /* AJUSTE CONFORME O CSS ATUAL DO CONTATO */
+    /* Adicionar aqui regras específicas para tela ultra-wide */
+}

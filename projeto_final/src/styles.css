@@ -19,3 +19,40 @@ body {
     
 }
 
+
+/* Media Queries Responsividade */
+
+/* Mobile - até 767px (celulares) */
+@media (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Tablet - 768px a 1023px */
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Desktop - a partir de 1024px */
+@media (min-width: 1024px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Desktop grande - 1366px e superiores */
+@media (min-width: 1366px) {
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Desktop ultra-wide - 1440px e superiores */
+@media (min-width: 1440px) {
+    body {
+        font-size: 18px;
+    }
+}
