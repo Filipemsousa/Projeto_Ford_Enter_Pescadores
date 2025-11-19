@@ -28,7 +28,7 @@ export class LoginComponent {
     }
 
     
-    if (this.username === 'filipe@gmail.com' && this.password === '1234') {
+    if (this.username === 'filipe@gmail.com' && this.password === '123456') {
       this.message = 'Login realizado com sucesso!';
       // Aqui você pode redirecionar usando Router:
       // this.router.navigate(['/home']);
