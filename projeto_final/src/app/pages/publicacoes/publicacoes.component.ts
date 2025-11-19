@@ -1,6 +1,5 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
-import { HeaderComponent } from "../../componentes/header/header.component";
-import { FooterComponent } from "../../componentes/footer/footer.component";
+import { AuthService } from '../../services/auth.service';
 
 interface Post {
   id: number;
@@ -12,7 +11,7 @@ interface Post {
 
 @Component({
   selector: 'app-publicacoes',
-  imports: [HeaderComponent, FooterComponent],
+  imports: [],
   templateUrl: './publicacoes.component.html',
   styleUrl: './publicacoes.component.css'
 })
@@ -27,7 +26,7 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
   @ViewChild('imageInput') imageInput!: ElementRef;
   @ViewChild('saveIndicator') saveIndicator!: ElementRef;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private auth: AuthService) { }
 
   ngOnInit() {
     // Load data from localStorage
@@ -136,6 +135,11 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
 
   // Publicar
   publishPost(): void {
+    if (!this.auth.isLoggedIn) {
+      alert('Somente o ADM tem permissão para realizar esta ação!');
+      return;
+    }
+
     const title = this.editorTitle.nativeElement.value.trim();
     const text = this.editorText.nativeElement.value.trim();
 
@@ -167,6 +171,11 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
 
   // Deletar publicação
   deletePost(id: number): void {
+    if (!this.auth.isLoggedIn) {
+      alert('Somente o ADM tem permissão para realizar esta ação!');
+      return;
+    }
+
     if (confirm('Tem certeza que deseja excluir esta publicação?')) {
       this.postsArray = this.postsArray.filter(post => post.id !== id);
       this.saveData();
