@@ -3,25 +3,23 @@
     <h1 class="feed_titulo">Feed de Publicações</h1>
     </div>
     <!-- Botão de adicionar publicação -->
-<div class="add-post-btn" id="add-post-btn">+</div>
+<div class="add-post-btn" (click)="showEditor()">+</div>
 
 <!-- Editor -->
-<div class="editor-container" id="editor-container">
-    <button class="close-editor" id="close-editor">✖</button>
+<div class="editor-container" #editorContainer>
+    <button class="close-editor" (click)="hideEditor()">✖</button>
     <h2>Crie sua publicação</h2>
-    <input type="text" id="editor-title" placeholder="Digite o título da postagem...">
-    <textarea id="editor-text" placeholder="Digite o texto da postagem..."></textarea>
+    <input type="text" #editorTitle placeholder="Digite o título da postagem...">
+    <textarea #editorText placeholder="Digite o texto da postagem..."></textarea>
 
     <h3>Adicione imagens</h3>
-    <input type="file" id="image-input" accept="image/*" multiple>
-    
-    <div class="save-indicator" id="save-indicator">Alterações salvas!</div>
+    <input type="file" #imageInput (change)="handleImageUpload($event)" accept="image/*" multiple>
 
-    <button class="publish-btn" id="publish-btn">Publicar</button>
+    <div class="save-indicator" #saveIndicator>Alterações salvas!</div>
+
+    <button class="publish-btn" (click)="publishPost()">Publicar</button>
 </div>
 
 <!-- Feed -->
-<div class="feed-container" id="feed-container"></div>
+<div class="feed-container" #feedContainer></div>
 </main>
-
-
