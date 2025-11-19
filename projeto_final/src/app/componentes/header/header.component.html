@@ -26,8 +26,7 @@
 </nav>
 
 <div class="logout">
-    <a class="botao_logout_a" href="login">
-        <img class="botao_logout" id="icon_logout" src="/Imagens/icone_logout.png" alt="Icone logout">
-     </a>
+    <span class="welcome-msg" *ngIf="isLoggedIn">Bem vindo {{ user }}!</span>
+    <img class="botao_logout" id="icon_logout" src="/Imagens/icone_logout.png" alt="Icone logout" (click)="logout()">
 </div>
 </header>

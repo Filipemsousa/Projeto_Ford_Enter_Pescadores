@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { HeaderComponent } from "../../componentes/header/header.component";
-import { FooterComponent } from "../../componentes/footer/footer.component";
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
   selector: 'app-login',
-  imports: [HeaderComponent, FooterComponent, FormsModule],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -18,7 +18,7 @@ export class LoginComponent {
   // Mensagem para feedback
   message: string = '';
 
-  constructor() {}
+  constructor(private auth: AuthService, private router: Router) { }
 
   login() {
     // Validação simples
@@ -27,11 +27,10 @@ export class LoginComponent {
       return;
     }
 
-    
-    if (this.username === 'filipe@gmail.com' && this.password === '123456') {
+
+    if (this.auth.login(this.username, this.password)) {
       this.message = 'Login realizado com sucesso!';
-      // Aqui você pode redirecionar usando Router:
-      // this.router.navigate(['/home']);
+      this.router.navigate(['/']); // redirect to home
     } else {
       this.message = 'Usuário ou senha incorretos.';
     }
