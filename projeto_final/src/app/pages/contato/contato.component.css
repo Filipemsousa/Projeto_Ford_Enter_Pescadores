@@ -31,10 +31,29 @@ main p{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 15vh;
-    font-size: 30px;
+    padding: 21vh;
+    font-size: 28px;
     text-align: justify;
     justify-content: center;
+
+    background-image: url(/Imagens/barcos_navegando2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 25px;
+
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 1px;
+
+    text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+     0    2px 0 #000,
+     0   -2px 0 #000,
+     2px  0   0 #000,
+    -2px  0   0 #000;
 }
 
 .formulario_geral{

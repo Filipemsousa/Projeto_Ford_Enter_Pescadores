@@ -6,13 +6,16 @@
     flex-direction: column;
     margin-top: 9vh;
     background-color:  rgb(21, 197, 209);
-    background-image: url(/Imagens/barcos-itapua.jpg);
+    background-image: url(/Imagens/barcos_itapua2.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     margin-bottom: 25px;
     font-size: 5vh;
-    padding: 15vh;
+    padding: 20vh;
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 1px;
+    
     
     text-shadow:
     -2px -2px 0 #000,
