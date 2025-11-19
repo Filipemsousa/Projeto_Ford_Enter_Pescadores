@@ -7,11 +7,11 @@ footer {
     justify-content: end;
     left: 0;
     bottom: 0;
-         
+    margin-top: 53px;
+    
 }
 
 footer div {
-    text-decoration: none;
     
     float: right;
     margin-right: 40px;
@@ -21,14 +21,18 @@ footer div {
 .social_links{
     display: flex;
     gap: 1.2rem;
-   
+    list-style-type: none;
+    margin-top: 15px;
+    
 }
 
 .logo_rodape{
     display: flex;
+    
 }
 
 .link_rodape{
      color: #ffffff;
      text-decoration: none;
+     
 }
