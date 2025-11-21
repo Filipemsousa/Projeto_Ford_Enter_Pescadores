@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 
 interface Post {
@@ -6,17 +7,19 @@ interface Post {
   title?: string;
   text?: string;
   images?: string[];
+  videos?: string[];
   date: string;
 }
 
 @Component({
   selector: 'app-publicacoes',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './publicacoes.component.html',
   styleUrl: './publicacoes.component.css'
 })
 export class PublicacoesComponent implements OnInit, AfterViewInit {
   tempImages: string[] = [];
+  tempVideos: string[] = [];
   postsArray: Post[] = [];
 
   @ViewChild('editorContainer') editorContainer!: ElementRef;
@@ -105,6 +108,20 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
       });
     }
 
+    // Vídeos
+    if (post.videos && post.videos.length > 0) {
+      post.videos.forEach(videoUrl => {
+        const iframe = this.renderer.createElement('iframe');
+        this.renderer.setAttribute(iframe, 'src', videoUrl);
+        this.renderer.setAttribute(iframe, 'width', '560');
+        this.renderer.setAttribute(iframe, 'height', '315');
+        this.renderer.setAttribute(iframe, 'frameborder', '0');
+        this.renderer.setAttribute(iframe, 'allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        this.renderer.setAttribute(iframe, 'allowfullscreen', 'true');
+        this.renderer.appendChild(feedItem, iframe);
+      });
+    }
+
     // Texto
     if (post.text) {
       const p = this.renderer.createElement('p');
@@ -133,6 +150,43 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
     }
   }
 
+  // Extrair ID do vídeo do YouTube
+  extractYouTubeVideoId(url: string): string | null {
+    const patterns = [
+      /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/,
+      /(?:https?:\/\/)?(?:www\.)?youtube\.com\/v\/([^"&?\/\s]{11})/,
+      /(?:https?:\/\/)?(?:www\.)?youtu\.be\/([^"&?\/\s]{11})/
+    ];
+
+    for (const pattern of patterns) {
+      const match = url.match(pattern);
+      if (match && match[1]) {
+        return match[1];
+      }
+    }
+    return null;
+  }
+
+  // Adicionar vídeo do YouTube
+  addYouTubeVideo(url: string): void {
+    const videoId = this.extractYouTubeVideoId(url);
+    if (videoId) {
+      const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+      if (this.tempVideos.length === 0) {
+        this.tempVideos.push(embedUrl);
+      } else {
+        alert('Cada publicação pode conter apenas um vídeo!');
+      }
+    } else {
+      alert('URL do YouTube inválida!');
+    }
+  }
+
+  // Remover vídeo temporário
+  removeTempVideo(index: number): void {
+    this.tempVideos.splice(index, 1);
+  }
+
   // Publicar
   publishPost(): void {
     if (!this.auth.isLoggedIn) {
@@ -143,8 +197,8 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
     const title = this.editorTitle.nativeElement.value.trim();
     const text = this.editorText.nativeElement.value.trim();
 
-    if (!title && !text && this.tempImages.length === 0) {
-      alert('Adicione pelo menos um título, texto ou imagem antes de publicar!');
+    if (!title && !text && this.tempImages.length === 0 && this.tempVideos.length === 0) {
+      alert('Adicione pelo menos um título, texto, imagem ou vídeo do YouTube antes de publicar!');
       return;
     }
 
@@ -153,6 +207,7 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
       title,
       text,
       images: [...this.tempImages],
+      videos: [...this.tempVideos],
       date: new Date().toISOString()
     };
 
@@ -165,6 +220,7 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
     this.editorText.nativeElement.value = '';
     this.imageInput.nativeElement.value = '';
     this.tempImages = [];
+    this.tempVideos = [];
 
     this.hideEditor();
   }

@@ -15,6 +15,18 @@
     <h3>Adicione imagens</h3>
     <input type="file" #imageInput (change)="handleImageUpload($event)" accept="image/*" multiple>
 
+    <h3>Adicione vídeos do YouTube</h3>
+    <input type="url" #videoInput placeholder="Cole a URL do vídeo do YouTube aqui...">
+    <button type="button" (click)="addYouTubeVideo(videoInput.value); videoInput.value=''" class="add-video-btn">Adicionar Vídeo</button>
+
+    <div class="temp-videos" *ngIf="tempVideos && tempVideos.length > 0">
+        <h4>Vídeos a serem publicados:</h4>
+        <div class="temp-video-item" *ngFor="let video of tempVideos; let i = index">
+            <iframe [src]="video" width="280" height="90" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <button type="button" (click)="removeTempVideo(i)" class="remove-video-btn">Remover</button>
+        </div>
+    </div>
+
     <div class="save-indicator" #saveIndicator>Alterações salvas!</div>
 
     <button class="publish-btn" (click)="publishPost()">Publicar</button>
