@@ -244,7 +244,7 @@ input[type="url"] {
 .feed-item img {
     width: 100%;
     max-width: 550px;
-    height: 220px;
+    max-height: 450px;
     object-fit: cover;
     border-radius: 8px;
     display: block;
