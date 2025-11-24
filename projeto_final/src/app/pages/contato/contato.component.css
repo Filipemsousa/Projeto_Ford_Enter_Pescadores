@@ -142,26 +142,36 @@ main p{
 
 /* Media Queries Responsividade Contato */
 
-/* Mobile - até 767px (celulares) */
-@media (max-width: 767px) {
-    /* AJUSTE CONFORME O CSS ATUAL DO CONTATO */
-    /* Adicionar aqui regras específicas para mobile */
-}
-
 /* Tablet - 768px a 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
-    /* AJUSTE CONFORME O CSS ATUAL DO CONTATO */
-    /* Adicionar aqui regras específicas para tablet */
+    .formulario_geral{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 20px;
+    
+}
 }
 
-/* Desktop - 1366px e superiores */
-@media (min-width: 1366px) {
-    /* AJUSTE CONFORME O CSS ATUAL DO CONTATO */
-    /* Adicionar aqui regras específicas para desktop grande */
+
+@media (min-width: 540px) and (max-width: 767px) {
+    .formulario_geral{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 20px;
+    
+}
 }
 
-/* Desktop ultra-wide - 1440px e superiores */
-@media (min-width: 1440px) {
-    /* AJUSTE CONFORME O CSS ATUAL DO CONTATO */
-    /* Adicionar aqui regras específicas para tela ultra-wide */
+
+@media (max-width: 450px) {
+    .formulario_geral{
+    display: flex;
+    flex-direction: column;
+    
 }
+}
+
+
+
