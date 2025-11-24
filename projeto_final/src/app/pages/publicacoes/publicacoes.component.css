@@ -292,3 +292,19 @@ transform: scale(1.3);
     }
 }
 
+@media (max-width: 768px) {
+    .feed-container {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    .editor-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    input[type="text"],
+    textarea,
+    input[type="url"] {
+        width: 100%;
+    }
+}
