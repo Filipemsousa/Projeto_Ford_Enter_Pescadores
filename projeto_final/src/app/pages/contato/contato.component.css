@@ -165,13 +165,14 @@ main p{
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 539px) {
     .formulario_geral{
     display: flex;
     flex-direction: column;
+    gap: 80px;
+    padding: 20px;
     
 }
 }
-
 
 
