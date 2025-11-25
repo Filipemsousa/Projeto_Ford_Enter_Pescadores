@@ -57,7 +57,7 @@
 
 /* Media Queries Responsividade Index */
 
-/* Mobile - até 767px (celulares) */
+/* Mobile - atï¿½ 767px (celulares) */
 @media (max-width: 767px) {
     .index_titulo {
         margin-top: 5vh;
@@ -100,10 +100,6 @@
     .sobre_nos_texto {
         width: 45%;
         font-size: 0.95rem;
-    }
-    
-    .sobre_nos_img {
-        width: 50%;
     }
 }
 
