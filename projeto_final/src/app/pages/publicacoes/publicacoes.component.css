@@ -61,9 +61,18 @@
     padding: 20px;
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
     display: none;
     animation: fadeIn 0.4s ease;
+
+
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 @keyframes fadeIn {
@@ -257,7 +266,7 @@ input[type="url"] {
     margin: 10px auto;
 }
 
-/* Botão de exclusão (X vermelho) */
+
 .feed-item {
 position: relative; /* 🔹 ESSENCIAL para o X aparecer dentro da publicação */
 background-color: white;
