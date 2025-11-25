@@ -38,6 +38,10 @@
     flex-direction: column;
 }
 
+h1{
+    font-size: 3vh;
+}
+
 .local{
     display: flex;
     justify-content: center;
@@ -63,7 +67,8 @@
     border: 1px solid #ccc;
     padding: 20px;
     background-color: #FFFFFF;
-    box-shadow: 5px 5px 15px;
+    color: rgb(21, 187, 187);
+    
     border-radius: 20px;
     
 }
