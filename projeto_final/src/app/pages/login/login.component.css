@@ -6,13 +6,9 @@ main{
     
 }
 
-
-
-.logo{
-   display: flex;
-   align-self: auto;
-   width: 50%;
-   margin-top: 35vh;     
+.logo_form{
+    width: 7vh;
+    margin-bottom: 3vh;
 }
 
 .logo_div{
@@ -89,7 +85,7 @@ main{
     justify-content: center;
 }
 .botao_entrar:hover{
-    background-color: #3487d4; 
+    background-color: #1ae2d8; 
     transform: scale(1.01); 
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
 }
@@ -104,3 +100,5 @@ main{
     margin-left: 185px;
     text-align: center;
 }
+
+

@@ -1,17 +1,17 @@
 <main>
 <div class="forms">
-    <div class="logo_img">
-        <img class="logo" src="Imagens/logo_pesca.png">
-    </div>
+    
 
     <div class="forms_div">
         <div class="forms_div_texto">
-            <h2 class="titulo">Boas Vindas</h2>
+            <img class="logo_form" src="Imagens/logo_pesca.png">
+            <h2 class="titulo">Boas Vindas Administrador</h2>
 
             <!-- Angular controlando o envio -->
             <form (ngSubmit)="login()">
-
+                
                 <div>
+                    
                     <label class="label-input">
                         <input type="text" [(ngModel)]="username" name="username"
                             placeholder="Insira seu e-mail*" class="form_id" required>
