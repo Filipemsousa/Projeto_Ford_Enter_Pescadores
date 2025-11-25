@@ -235,14 +235,14 @@ input[type="url"] {
 
 .feed-item h3 {
     font-size: 22px;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 10px;
     text-align: center;
 }
 
 .feed-item p {
     font-size: 20px;
-    color: #555;
+    color: #ffffff;
     margin-top: 10px;
     text-align: justify;
 }
@@ -265,6 +265,15 @@ border-radius: 8px;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 padding: 15px;
 margin-bottom: 20px;
+
+
+
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .delete-btn {
@@ -272,7 +281,7 @@ position: absolute;
 top: 8px;
 right: 8px;
 background-color: transparent;
-color: red;
+color: rgb(68, 68, 68);
 border: none;
 font-size: 24px;
 font-weight: bold;
