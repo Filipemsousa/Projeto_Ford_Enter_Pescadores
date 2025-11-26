@@ -6,7 +6,7 @@
     flex-direction: column;
     margin-top: 9vh;
     background-color:  rgb(21, 197, 209);
-    background-image: url(/Imagens/barcos_itapua2.png);
+    background-image: url(/Imagens/mar_ondas.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -16,15 +16,7 @@
     border-radius: 1px;
     
     
-    text-shadow:
-    -2px -2px 0 #000,
-     2px -2px 0 #000,
-    -2px  2px 0 #000,
-     2px  2px 0 #000,
-     0    2px 0 #000,
-     0   -2px 0 #000,
-     2px  0   0 #000,
-    -2px  0   0 #000;
+   
 }
 
 

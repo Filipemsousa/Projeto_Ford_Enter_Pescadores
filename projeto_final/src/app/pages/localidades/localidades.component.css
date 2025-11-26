@@ -12,7 +12,7 @@
     background-color:  rgb(21, 197, 209);
     font-size: 8vh;
     padding: 25vh;
-    background-image: url(/Imagens/sede_pescadores.png);
+    background-image: url(/Imagens/mar_ondas.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -21,15 +21,7 @@
     border-radius: 1px;
 
 
-    text-shadow:
-    -2px -2px 0 #000,
-     2px -2px 0 #000,
-    -2px  2px 0 #000,
-     2px  2px 0 #000,
-     0    2px 0 #000,
-     0   -2px 0 #000,
-     2px  0   0 #000,
-    -2px  0   0 #000;
+    
 }
 
 .local_todos{
