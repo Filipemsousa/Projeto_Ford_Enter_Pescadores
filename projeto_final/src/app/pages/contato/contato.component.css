@@ -46,6 +46,16 @@ main p{
     border-radius: 1px;
 
     height: 20vh;
+
+    
+}
+
+.contato_titulo{
+    font-size: 7vh;
+}
+
+.contato_subtitulo{
+    font-size: 3vh;
 }
 
 .formulario_geral{
