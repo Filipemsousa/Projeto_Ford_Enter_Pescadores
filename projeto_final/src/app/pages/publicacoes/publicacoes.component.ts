@@ -101,11 +101,15 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
 
     // Imagens
     if (post.images && post.images.length > 0) {
-      post.images.forEach(imageUrl => {
+      if (post.images.length === 1) {
+        // Single image
         const img = this.renderer.createElement('img');
-        this.renderer.setAttribute(img, 'src', imageUrl);
+        this.renderer.setAttribute(img, 'src', post.images[0]);
         this.renderer.appendChild(feedItem, img);
-      });
+      } else {
+        // Carousel for multiple images
+        this.renderCarousel(feedItem, post.images, post.id);
+      }
     }
 
     // Vídeos
@@ -223,6 +227,104 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
     this.tempVideos = [];
 
     this.hideEditor();
+  }
+
+  // Renderizar carousel para múltiplas imagens
+  renderCarousel(feedItem: Element, images: string[], postId: number): void {
+    const carouselContainer = this.renderer.createElement('div');
+    this.renderer.addClass(carouselContainer, 'carousel');
+
+    // Slides container
+    const slidesContainer = this.renderer.createElement('div');
+    this.renderer.addClass(slidesContainer, 'carousel-slides');
+
+    // Create slides
+    images.forEach((imageUrl, index) => {
+      const slide = this.renderer.createElement('div');
+      this.renderer.addClass(slide, 'carousel-slide');
+      if (index === 0) {
+        this.renderer.addClass(slide, 'active');
+      }
+
+      const img = this.renderer.createElement('img');
+      this.renderer.setAttribute(img, 'src', imageUrl);
+      this.renderer.setAttribute(img, 'alt', `Imagem ${index + 1} da publicação ${postId}`);
+
+      this.renderer.appendChild(slide, img);
+      this.renderer.appendChild(slidesContainer, slide);
+    });
+
+    // Navigation buttons
+    const prevBtn = this.renderer.createElement('button');
+    this.renderer.addClass(prevBtn, 'carousel-btn');
+    this.renderer.addClass(prevBtn, 'carousel-prev');
+    this.renderer.setProperty(prevBtn, 'textContent', '‹');
+    this.renderer.listen(prevBtn, 'click', () => this.moveCarousel(carouselContainer, -1));
+
+    const nextBtn = this.renderer.createElement('button');
+    this.renderer.addClass(nextBtn, 'carousel-btn');
+    this.renderer.addClass(nextBtn, 'carousel-next');
+    this.renderer.setProperty(nextBtn, 'textContent', '›');
+    this.renderer.listen(nextBtn, 'click', () => this.moveCarousel(carouselContainer, 1));
+
+    // Indicators
+    const indicatorsContainer = this.renderer.createElement('div');
+    this.renderer.addClass(indicatorsContainer, 'carousel-indicators');
+
+    images.forEach((_, index) => {
+      const indicator = this.renderer.createElement('span');
+      this.renderer.addClass(indicator, 'carousel-indicator');
+      if (index === 0) {
+        this.renderer.addClass(indicator, 'active');
+      }
+      this.renderer.listen(indicator, 'click', () => this.goToSlide(carouselContainer, index));
+      this.renderer.appendChild(indicatorsContainer, indicator);
+    });
+
+    // Assemble carousel
+    this.renderer.appendChild(carouselContainer, slidesContainer);
+    this.renderer.appendChild(carouselContainer, prevBtn);
+    this.renderer.appendChild(carouselContainer, nextBtn);
+    this.renderer.appendChild(carouselContainer, indicatorsContainer);
+
+    this.renderer.appendChild(feedItem, carouselContainer);
+  }
+
+  // Mover carousel
+  moveCarousel(carousel: Element, direction: number): void {
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const indicators = carousel.querySelectorAll('.carousel-indicator');
+    const totalSlides = slides.length;
+
+    if (totalSlides <= 1) return;
+
+    let currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
+    if (currentIndex === -1) currentIndex = 0;
+
+    // Update current slide
+    slides[currentIndex].classList.remove('active');
+    indicators[currentIndex].classList.remove('active');
+
+    // Calculate new index
+    currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+
+    // Update new slide
+    slides[currentIndex].classList.add('active');
+    indicators[currentIndex].classList.add('active');
+  }
+
+  // Ir para slide específico
+  goToSlide(carousel: Element, slideIndex: number): void {
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const indicators = carousel.querySelectorAll('.carousel-indicator');
+
+    // Remove active class from all
+    slides.forEach(slide => slide.classList.remove('active'));
+    indicators.forEach(indicator => indicator.classList.remove('active'));
+
+    // Add active class to target
+    slides[slideIndex].classList.add('active');
+    indicators[slideIndex].classList.add('active');
   }
 
   // Deletar publicação
