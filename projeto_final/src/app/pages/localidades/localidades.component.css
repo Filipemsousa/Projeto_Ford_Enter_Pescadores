@@ -32,7 +32,16 @@
 }
 
 h1{
-    font-size: 5vh;
+    font-size: 3vh;
+}
+
+
+.local_sedes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
 }
 
 .local{
@@ -72,10 +81,12 @@ h1{
 }
 
 .local_img{
-    width: 450px;
+    width: 400px;
+    height: 350px;
     padding: 10px;
     box-shadow: 5px 5px 15px;
     border-radius: 20px;
+    object-fit: cover;
 }
 
 /* Media Queries para diferentes resoluções - diminuindo width de .local_img */
@@ -129,23 +140,4 @@ h1{
     }
 }
 
-/* Desktops pequenos - até 1024px */
-@media (max-width: 1024px) {
-    .local_img {
-        width: 400px;
-    }
-}
 
-/* Desktops médios - até 1366px */
-@media (max-width: 1366px) {
-    .local_img {
-        width: 420px;
-    }
-}
-
-/* Desktops grandes - 1440px e acima (mantém o original) */
-@media (min-width: 1440px) {
-    .local_img {
-        width: 450px;
-    }
-}
