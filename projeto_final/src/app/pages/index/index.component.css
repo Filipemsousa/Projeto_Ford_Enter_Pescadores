@@ -96,9 +96,27 @@
 
 .servicos_conteiner{
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: space-around;
+    text-align: justify;
+    gap: 80px;
     padding: 20px;
+    flex-wrap: wrap;
+
+}
+
+.servicos_conteiner h2{
+    font-size: 2.5vh;
+    margin-bottom: 20px;
+}
+
+
+.servico_1{
+   width: 100%;
+   max-width: 400px;  
+}
+
+.servico_1 h2{
+    text-align: center;
 }
 
 /* Media Queries Responsividade Index */
