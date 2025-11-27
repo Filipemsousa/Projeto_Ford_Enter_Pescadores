@@ -66,6 +66,41 @@
     border-radius: 20px;
 }
 
+
+.servicos{
+    display: flex;
+    justify-content: center;
+    margin: 20px 0 20px 0;
+    gap: 20px;
+    background-color:#ffffffff;
+    box-shadow: 3px 3px 15px;
+
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.servicos_titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.5vh;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+.servicos_conteiner{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
 /* Media Queries Responsividade Index */
 
 /* Mobile - at� 767px (celulares) */
