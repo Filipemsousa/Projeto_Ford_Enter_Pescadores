@@ -16,7 +16,7 @@ export class AuthService {
   constructor(private router: Router) { }
 
   login(username: string, password: string): boolean {
-    if (username === 'filipe@gmail.com' && password === '123456') {
+    if ((username === 'filipe@gmail.com' && password === '123456') || (username === 'aripescador' && password === '654321') ) {
       this.isLoggedInSubject.next(true);
       this.currentUserSubject.next('ADM');
       localStorage.setItem('isLoggedIn', 'true');
