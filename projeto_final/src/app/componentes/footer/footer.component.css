@@ -38,7 +38,7 @@ footer .link_rodape ul{
 }
 
 footer .link_rodape h3{
-    color: #0eaae7;
+    color: #108fc2;
     font-weight: 600;
 }
 
@@ -60,6 +60,23 @@ footer .link_rodape ul > p{
     text-decoration: none;
 }
 
+.footer_total{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copyright{
+    display: flex;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    font-size: 14px;
+    border-top: 2px solid rgba(255, 255, 255, 0.247);
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Media Queries Responsividade Footer */
 
@@ -145,9 +162,7 @@ footer .link_rodape ul > p{
         font-size: 17px;
     }
     
-    footer div {
-        margin-right: 60px;
-    }
+    
     
     .container{
         gap: 2rem;
@@ -164,7 +179,4 @@ footer .link_rodape ul > p{
         font-size: 18px;
     }
     
-    footer div {
-        margin-right: 80px;
-    }
 }
