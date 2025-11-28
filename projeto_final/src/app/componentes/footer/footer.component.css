@@ -80,12 +80,11 @@ footer .link_rodape ul > p{
         order: 0;
     }
     
-    footer.social_links {
-        margin-top: 20px;
-        gap: 1rem;
+    .container{
+        flex-direction: column;
+        gap: 20px;
     }
-    
-    .logo_rodape {
+    .link_rodape {
         margin-bottom: 15px;
     }
 }
@@ -109,12 +108,11 @@ footer .link_rodape ul > p{
         order: 0;
     }
     
-    footer.social_links {
-        margin-top: 20px;
-        gap: 1rem;
+    .container{
+        flex-direction: column;
+        gap: 20px;
     }
-    
-    .logo_rodape {
+    .link_rodape {
         margin-bottom: 15px;
     }
 }
@@ -131,8 +129,12 @@ footer .link_rodape ul > p{
         margin-right: 30px;
     }
     
-    .social_links {
-        gap: 1.4rem;
+    .container{
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .link_rodape{
+        margin-bottom: 0;
     }
 }
 
@@ -147,8 +149,11 @@ footer .link_rodape ul > p{
         margin-right: 60px;
     }
     
-    .social_links {
-        gap: 1.5rem;
+    .container{
+        gap: 2rem;
+    }
+    .link_rodape {
+        margin-bottom: 0;
     }
 }
 
