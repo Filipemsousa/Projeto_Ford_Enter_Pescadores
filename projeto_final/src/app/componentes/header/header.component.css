@@ -3,7 +3,7 @@ header {
     top: 0;
     position: fixed;
     width: 100%;
-    background: #FFFFFF;
+    background: #ffffff;
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
     padding: 10px 100px;
@@ -26,9 +26,9 @@ header {
 }
 
 .welcome-msg {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: #000;
+    color: #069bff;
 }
 
 .botao_logout {
@@ -54,7 +54,7 @@ header nav ul {
 
 header nav ul a {
     text-decoration: none;
-    color: #000;
+    color: #069bff;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.2rem;
     font-weight: 600;
@@ -144,7 +144,7 @@ header nav ul a:hover{
     }
     
     .welcome-msg {
-        font-size: 1.1rem;
+        font-size: 0.7rem;
     }
 }
 
