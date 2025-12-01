@@ -42,6 +42,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-left: 80px;
 }
 
 header nav ul {
@@ -120,7 +121,7 @@ header nav ul a:hover{
     }
 
     .logout {
-        display: none;
+        display: flex;
     }
 
     header {
@@ -129,7 +130,13 @@ header nav ul a:hover{
     }
 
     .welcome-msg {
-        display: none;
+        display: inline;
+    }
+
+    /* Keep logout elements visible over hamburger menu */
+    header nav.active ~ .logout {
+        z-index: 1010;
+        position: relative;
     }
 }
 
