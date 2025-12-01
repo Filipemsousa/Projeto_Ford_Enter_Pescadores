@@ -2,5 +2,11 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist/projeto_final",
   "devCommand": "ng serve",
-  "framework": "angular"
+  "framework": "angular",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
