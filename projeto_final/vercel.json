@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/projeto_final",
+  "outputDirectory": "dist/projeto_final/browser",
   "devCommand": "ng serve",
   "framework": "angular",
   "rewrites": [
