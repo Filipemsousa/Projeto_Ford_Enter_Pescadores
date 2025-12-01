@@ -1,0 +1,6 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist/projeto-final",
+  "devCommand": "ng serve",
+  "framework": "angular"
+}
