@@ -102,3 +102,81 @@ main{
 }
 
 
+/* Media Queries Responsividade Login */
+@media (max-width: 767px) {
+    .forms_div{
+        height: 50vh;
+        margin-top: 20vh;
+    }
+
+    .forms_div_texto{
+        margin-top: 2vh;
+    }
+
+    .form_id {
+        width: 40vh;
+        font-size: 1.5vh;
+    }
+
+    .botao_entrar{
+        width: 39vh;
+        height: 4vh;
+        font-size: 1.5vh;
+    }
+
+    .msg {
+        margin-left: 100px;
+    }
+}
+
+@media (max-width: 450px) {
+    .forms_div{
+        height: 60vh;
+        margin-top: 15vh;
+    }
+
+    .forms_div_texto{
+        margin-top: 1vh;
+    }
+
+    .form_id {
+        width: 30vh;
+        font-size: 1.2vh;
+    }
+
+    .botao_entrar{
+        width: 29vh;
+        height: 4vh;
+        font-size: 1.2vh;
+    }
+
+    .msg {
+        margin-left: 70px;
+    }
+}
+
+@media (max-width: 350px) {
+    .forms_div{
+        height: 50vh;
+        margin-top: 10vh;
+    }
+
+    .forms_div_texto{
+        margin-top: 1vh;
+    }
+
+    .form_id {
+        width: 25vh;
+        font-size: 1vh;
+    }
+
+    .botao_entrar{
+        width: 24vh;
+        height: 4vh;
+        font-size: 1vh;
+    }
+
+    .msg {
+        margin-left: 50px;
+    }
+}
