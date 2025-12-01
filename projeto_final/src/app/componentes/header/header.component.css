@@ -42,7 +42,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 40px;
+    margin-left: 10px;
 }
 
 header nav ul {
