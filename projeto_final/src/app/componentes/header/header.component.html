@@ -1,40 +1,43 @@
 <header>
- 
-    
-    
-<div>
-    <img class="logo_principal" src="/Imagens/logo_pesca8.png" alt="logo">
-</div>
 
-<!-- Botão do menu hamburger -->
-<div class="hamburger-menu" (click)="toggleMenu()" [class.active]="isMenuOpen">
-    <div class="bar"></div>
-    <div class="bar"></div>
-    <div class="bar"></div>
-</div>
 
-<nav [class.active]="isMenuOpen">
-    <ul>
-        <li>
-            <a href="index">Início</a>
-        </li>
-        <li>
-            <a href="localidades">Localidades</a>
-        </li>
-        <li>
-            <a href="publicacoes">Publicações</a>
-        </li>
-        <li>
-            <a href="contato">Contato</a>
-        </li>
-        <li>
-            <a href="login">Login</a>
-        </li>
-    </ul>
-</nav>
 
-<div class="logout">
-    <span class="welcome-msg" *ngIf="isLoggedIn">Bem vindo {{ user }}!</span>
-    <img class="botao_logout" id="icon_logout" src="/Imagens/icone_logout3.png" alt="Icone logout" (click)="logout()">
-</div>
+    <div>
+        <img class="logo_principal" src="/Imagens/logo_pesca8.png" alt="logo">
+    </div>
+
+    <!-- Botão do menu hamburger -->
+    <div class="hamburger-menu" (click)="toggleMenu()" [class.active]="isMenuOpen">
+        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+            <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+            <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round" />
+        </svg>
+    </div>
+
+    <nav [class.active]="isMenuOpen">
+        <ul>
+            <li>
+                <a href="index">Início</a>
+            </li>
+            <li>
+                <a href="localidades">Localidades</a>
+            </li>
+            <li>
+                <a href="publicacoes">Publicações</a>
+            </li>
+            <li>
+                <a href="contato">Contato</a>
+            </li>
+            <li>
+                <a href="login">Login</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="logout">
+        <span class="welcome-msg" *ngIf="isLoggedIn">Bem vindo {{ user }}!</span>
+        <img class="botao_logout" id="icon_logout" src="/Imagens/icone_logout3.png" alt="Icone logout"
+            (click)="logout()">
+    </div>
 </header>
