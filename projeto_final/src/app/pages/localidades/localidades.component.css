@@ -96,12 +96,18 @@ h1{
     .local_img {
         width: 250px;
     }
+    .local{
+        padding: 0px;
+    }
 }
 
 /* Dispositivos móveis maiores - até 390px */
 @media (max-width: 390px) {
     .local_img {
         width: 220px;
+    }
+    .local{
+        padding: 0px;
     }
 }
 
@@ -110,12 +116,18 @@ h1{
     .local_img {
         width: 200px;
     }
+    .local{
+        padding: 0px;
+    }
 }
 
 /* Dispositivos móveis pequenos - até 360px */
 @media (max-width: 360px) {
     .local_img {
         width: 180px;
+    }
+    .local{
+        padding: 0px;
     }
 }
 
