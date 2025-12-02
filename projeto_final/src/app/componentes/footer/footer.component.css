@@ -1,7 +1,5 @@
 footer {
-    padding: 20px;
     display: flex;
-    
     background-color: #0b1535;
     justify-content: center;
     margin-top: 53px;
@@ -22,19 +20,16 @@ footer .container{
 }
 
 
+
 footer .link_rodape{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    
-    
-    
+      
 }
 
 footer .link_rodape ul{
     padding: 0;
-    margin: 0;
-    
 }
 
 footer .link_rodape h3{
@@ -93,7 +88,6 @@ footer .link_rodape ul > p{
     
     footer div {
         float: none;
-        margin-right: 0;
         order: 0;
     }
     
@@ -101,9 +95,16 @@ footer .link_rodape ul > p{
         flex-direction: column;
         gap: 20px;
     }
-    .link_rodape {
-        margin-bottom: 15px;
+    .link_rodape li{
+        margin-right: 40px;
     }
+    .link_rodape h3{
+        margin-right: 40px;
+    }
+    .link_rodape_sub{
+        margin-right: 40px;
+    }
+
 }
 
 
@@ -161,9 +162,6 @@ footer .link_rodape ul > p{
         padding: 25px;
         font-size: 17px;
     }
-    
-    
-    
     .container{
         gap: 2rem;
     }
