@@ -1,6 +1,7 @@
 import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, Renderer2 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
+import { HttpClient } from '@angular/common/http';
 
 interface Post {
   id: number;
@@ -21,6 +22,7 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
   tempImages: string[] = [];
   tempVideos: string[] = [];
   postsArray: Post[] = [];
+  private viewReady = false;
 
   @ViewChild('editorContainer') editorContainer!: ElementRef;
   @ViewChild('feedContainer') feedContainer!: ElementRef;
@@ -29,18 +31,18 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
   @ViewChild('imageInput') imageInput!: ElementRef;
   @ViewChild('saveIndicator') saveIndicator!: ElementRef;
 
-  constructor(private renderer: Renderer2, private auth: AuthService) { }
+  constructor(
+    private renderer: Renderer2,
+    private auth: AuthService,
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
-    // Load data from localStorage
-    const savedPosts: Post[] = JSON.parse(localStorage.getItem('feedPosts') || '[]');
-    if (savedPosts.length > 0) {
-      this.postsArray = savedPosts;
-    }
+    this.loadData();
   }
 
   ngAfterViewInit() {
-    // Now ViewChild elements are available
+    this.viewReady = true;
     this.renderExistingPosts();
   }
 
@@ -58,9 +60,7 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
     this.renderer.setStyle(this.editorContainer.nativeElement, 'display', 'none');
   }
 
-  // Salvar dados no localStorage
-  saveData(): void {
-    localStorage.setItem('feedPosts', JSON.stringify(this.postsArray));
+  private showSaveIndicator(): void {
     this.renderer.setStyle(this.saveIndicator.nativeElement, 'display', 'block');
     setTimeout(() => {
       if (this.saveIndicator) {
@@ -69,13 +69,15 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
     }, 800);
   }
 
-  // Carregar feed
+  // Carregar feed persistido no Vercel Blob
   loadData(): void {
-    const savedPosts: Post[] = JSON.parse(localStorage.getItem('feedPosts') || '[]');
-    if (savedPosts.length > 0) {
-      this.postsArray = savedPosts;
-      savedPosts.forEach(post => this.renderPost(post));
-    }
+    this.http.get<Post[]>('/api/posts').subscribe({
+      next: (posts) => {
+        this.postsArray = posts;
+        if (this.viewReady) this.renderExistingPosts();
+      },
+      error: () => console.error('Não foi possível carregar as publicações.')
+    });
   }
 
   // Renderizar post
@@ -215,18 +217,20 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
       date: new Date().toISOString()
     };
 
-    this.postsArray.push(newPost);
-    this.renderPost(newPost);
-    this.saveData();
-
-    // Limpar e ocultar
-    this.editorTitle.nativeElement.value = '';
-    this.editorText.nativeElement.value = '';
-    this.imageInput.nativeElement.value = '';
-    this.tempImages = [];
-    this.tempVideos = [];
-
-    this.hideEditor();
+    this.http.post<Post>('/api/posts', newPost).subscribe({
+      next: (savedPost) => {
+        this.postsArray.push(savedPost);
+        this.renderPost(savedPost);
+        this.showSaveIndicator();
+        this.editorTitle.nativeElement.value = '';
+        this.editorText.nativeElement.value = '';
+        this.imageInput.nativeElement.value = '';
+        this.tempImages = [];
+        this.tempVideos = [];
+        this.hideEditor();
+      },
+      error: () => alert('Não foi possível salvar a publicação. Tente novamente.')
+    });
   }
 
   // Renderizar carousel para múltiplas imagens
@@ -335,12 +339,14 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
     }
 
     if (confirm('Tem certeza que deseja excluir esta publicação?')) {
-      this.postsArray = this.postsArray.filter(post => post.id !== id);
-      this.saveData();
-      const item = this.feedContainer.nativeElement.querySelector(`.feed-item[data-id='${id}']`);
-      if (item) {
-        this.renderer.removeChild(this.feedContainer.nativeElement, item);
-      }
+      this.http.delete(`/api/posts?id=${id}`).subscribe({
+        next: () => {
+          this.postsArray = this.postsArray.filter(post => post.id !== id);
+          const item = this.feedContainer.nativeElement.querySelector(`.feed-item[data-id='${id}']`);
+          if (item) this.renderer.removeChild(this.feedContainer.nativeElement, item);
+        },
+        error: () => alert('Não foi possível excluir a publicação. Tente novamente.')
+      });
     }
   }
 }
