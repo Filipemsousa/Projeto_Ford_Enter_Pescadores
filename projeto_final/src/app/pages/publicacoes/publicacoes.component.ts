@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, ElementRef, ViewChild, Renderer2 } fr
 import { CommonModule } from '@angular/common';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 
 interface Post {
   id: number;
@@ -76,7 +77,9 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
         this.postsArray = posts;
         if (this.viewReady) this.renderExistingPosts();
       },
-      error: () => console.error('Não foi possível carregar as publicações.')
+      error: (error: HttpErrorResponse) => console.error(
+        error.error?.details || 'Não foi possível carregar as publicações.'
+      )
     });
   }
 
@@ -229,7 +232,9 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
         this.tempVideos = [];
         this.hideEditor();
       },
-      error: () => alert('Não foi possível salvar a publicação. Tente novamente.')
+      error: (error: HttpErrorResponse) => alert(
+        error.error?.details || 'Não foi possível salvar a publicação. Tente novamente.'
+      )
     });
   }
 
@@ -345,7 +350,9 @@ export class PublicacoesComponent implements OnInit, AfterViewInit {
           const item = this.feedContainer.nativeElement.querySelector(`.feed-item[data-id='${id}']`);
           if (item) this.renderer.removeChild(this.feedContainer.nativeElement, item);
         },
-        error: () => alert('Não foi possível excluir a publicação. Tente novamente.')
+        error: (error: HttpErrorResponse) => alert(
+          error.error?.details || 'Não foi possível excluir a publicação. Tente novamente.'
+        )
       });
     }
   }

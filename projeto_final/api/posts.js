@@ -1,6 +1,15 @@
-import { del, list, put } from '@vercel/blob';
+import { list, put } from '@vercel/blob';
 
 const POSTS_FILE = 'publicacoes/posts.json';
+
+function blobIsConfigured() {
+  // A Vercel usa OIDC quando o Blob Store está conectado ao projeto. O token
+  // estático também é aceito quando a conexão foi criada dessa forma.
+  return Boolean(
+    process.env.BLOB_READ_WRITE_TOKEN ||
+    (process.env.BLOB_STORE_ID && process.env.VERCEL_OIDC_TOKEN)
+  );
+}
 
 async function readPosts() {
   const { blobs } = await list({ prefix: POSTS_FILE });
@@ -22,6 +31,14 @@ async function writePosts(posts) {
 }
 
 export default async function handler(request, response) {
+  if (!blobIsConfigured()) {
+    return response.status(503).json({
+      error: 'Armazenamento não configurado.',
+      code: 'BLOB_NOT_CONFIGURED',
+      details: 'Conecte o Blob Store a este projeto e habilite o ambiente Production.'
+    });
+  }
+
   try {
     if (request.method === 'GET') {
       return response.status(200).json(await readPosts());
@@ -50,6 +67,10 @@ export default async function handler(request, response) {
     return response.status(405).json({ error: 'Método não permitido.' });
   } catch (error) {
     console.error(error);
-    return response.status(500).json({ error: 'Erro ao acessar o armazenamento de publicações.' });
+    return response.status(500).json({
+      error: 'Erro ao acessar o armazenamento de publicações.',
+      code: error?.name || 'BLOB_ERROR',
+      details: error instanceof Error ? error.message : 'Erro desconhecido.'
+    });
   }
 }
